@@ -75,7 +75,7 @@ Github.Contents = (url as text) =>
         content = Web.Contents(url),
         link = GetNextLink(content),
         json = Json.Document(content),
-        table = Table.FromList(json, Splitter.SplitByNothing())
+        table = Record.ToTable(json)
     in
         table meta [Next=link];
 
